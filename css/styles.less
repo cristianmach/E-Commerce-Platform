@@ -1,0 +1,709 @@
+@negro-custom: #141618;
+@blanco: #fff;
+@texto-oscuro: #2e2c2c;
+@texto-claro: #777;
+@texto-blanco: white;
+@dorado: #b4975a;
+@texto-amarillo: rgba(148, 140, 32, 0.87);
+@gris-claro: #eaeaea;
+@azul-oscuro: rgb(19, 23, 66);
+@azul-medio-oscuro: rgb(25, 31, 93);
+
+@fuente-principal: 'Playfair Display', serif;
+@fuente-secundaria: 'Poppins', serif;
+
+
+*{
+	margin:0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body{
+	font-size: 16px;
+	font-family: @fuente-principal;
+	color: @texto-oscuro;
+}
+
+.container{
+	width: 90%;
+	max-width: 1080px;
+	margin: 0 auto;
+}
+
+img{
+	vertical-align: top;
+	max-width: 100%;
+}
+
+a{
+	text-decoration: none;
+	color: @texto-oscuro;
+	-webkit-transition: all .3s ease; //transicion del cursor al ponerse encia del enlase.
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+
+	&:hover{
+		color: fade(@dorado, 50%);
+	}
+}
+
+.titulo-seccion{
+	h2{
+		font-size: 2.125rem;
+		font-weight: 400;
+		line-height: 3.6875rem;
+		margin-bottom: 1.125rem;
+		font-style: italic;
+		letter-spacing: -0.02em;
+	}
+
+	p{
+		font-size: 1.25rem;
+		color: #777;
+	}
+}
+
+header{
+
+	.menu-bar-pc{
+        color: @texto-blanco;
+		background: @azul-oscuro;
+		width: 100%;
+		position: fixed; //mantener fijo el encabezado.
+		z-index: 99; //mantener encima de los demas elementos.
+		top: 0; //0 es para que este pegado arriba.
+		padding: 0 2.25rem; //rem o em es para manejar una medida a escala declarada en el font-size.
+		display: flex; //hace que se coloque un elemento al lado del otro.
+		flex-direction: row;
+		justify-content: space-between;//separa los elementos "div" inicio - centro - final.
+		align-items: center; //para que se alinien verticalmente.
+		min-height: 4.875rem; //Altura minima.
+		border-bottom: 3px solid @gris-claro;//Borde abajo.
+
+		.menu-prin{
+			line-height: 0.8rem; //Sangria vertical
+			padding-bottom: 0.8rem; //distancia entre el borde y el texto.
+			font-weight: 700; //grosor de la letra 
+		}
+
+        .buscar{
+            .nav-search-input{    
+            line-height: 3rem; //Sangria vertical
+		    z-index: 99; //mantener encima de los demas elementos.
+            background-origin: border-box;
+            text-align: left;
+            border-radius: 10px;
+            border: 0.1px solid white;
+            margin: 1rem; /*distancia con respecto a otros elementos*/
+            box-shadow: 4px 4px 20px 0 gray;/*sombra del borde*/
+            box-sizing: border-box;
+            line-height: 2.5; /*Sangria vertical*/
+            /*font-weight: 700; grosor de la letra */
+            width: 40rem;
+            height: 1rem;
+            display: inline-block; /*Cambiar el origen del elemento para que no ocupe todo un bloque*/
+            padding-bottom: 20px; /*distancia entre el borde y el texto inferior*/
+            padding-top: 20px;/*distancia entre el borde y el texto superior*/
+            padding-left: 30px;/*distancia entre el borde y el texto izquierdo*/
+            padding-right: 30px;/*distancia entre el borde y el texto derecho*/
+            }
+
+            .nav-search-btn{
+                border-radius: 100%;
+                border: 0.1px solid white;
+                margin: -1rem; /*distancia con respecto a otros elementos*/
+                box-shadow: 4px 4px 20px 0 gray;/*sombra del borde*/
+                box-sizing: border-box;
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+        }
+
+		.logo{
+			max-width: 5rem;
+            opacity: 1;
+            
+		}
+
+		.menu-principal{
+            width: 50rem;
+            background-color: @azul-medio-oscuro;
+            border-radius: 10px;
+            border-left: 0.1px solid white;
+			border-right: 0.1px solid white;
+            text-align: center;
+
+			a{
+                color: @texto-blanco;
+				padding: 0 0.5625rem;
+
+				&:hover{
+					color: fade(@dorado, 50%);
+				}
+			}
+		}
+
+		.top-redes{
+			a{
+                color: @texto-blanco;
+				padding: 0 0.5625rem;
+                text-align: center;
+				&:hover{
+					color: fade(@dorado, 50%);
+				}
+			}
+		}
+	}
+}
+
+.main{
+	margin-top: 5.875rem; //para que el encabezado no tape el contenido,
+	.portada{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content:space-between;
+
+		.col{
+			width: 50%;
+			background-color: @blanco;
+			color: @texto-oscuro;
+			display: flex;
+			flex-wrap: wrap;
+
+			h2{
+				font-style: italic;
+			}
+
+			p{
+				font-size: 1.25rem;
+				color: #777;
+			}
+
+			.foto{
+				background-size: cover; //ajustar tamaño.
+				background-position: center;
+				width: 50%;
+
+				&.izq{
+					background-image: url('../img/contenido2.jpg');
+					opacity: 0.8; //opacidad de la imagen.
+					background-position: left; //posicion de la imagen a la izquierda.
+				}
+
+				&.der{
+					background-image: url('../img/contenido1.jpg');
+					opacity: 0.8; //opacidad de la imagen.
+				}
+
+				.overlay{
+					opacity: 0;
+					width: 100%;
+					height: 100%;
+					background: fade(@negro-custom, 40%);
+					position: relative;
+					cursor: pointer;
+					-webkit-transition: all .3s ease;
+					-o-transition: all .3s ease;
+					transition: all .3s ease;
+
+					&:hover{
+						opacity: 1;
+					}
+
+					i{
+						color: @blanco;
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+						font-size: 1.5625rem;
+					}
+				}
+			}
+
+			.texto{
+				width: 50%;
+				padding: 3.375rem;
+
+				h2{
+					font-size: 1.8125rem;
+					font-weight: 400;
+					line-height: 2.6875rem;
+					margin-bottom: 1.125rem;
+				}
+
+				p{
+					font-size: 0.9375rem;
+					line-height: 1.75;
+				}
+			}
+
+			.foto-full{
+				width: 100%;
+				min-height: 15.25rem;
+				background-size: cover;
+				background-position: center;
+
+				&.izq{
+					background-image: url('../img/m.png');
+					
+				}
+
+				&.der{
+					background-image: url('../img/mb.png');
+				}
+
+				.overlay{
+					opacity: 0;
+					width: 100%;
+					height: 100%;
+					background: fade(@negro-custom, 40%);
+					position: relative;
+					cursor: pointer;
+					-webkit-transition: all .3s ease;
+					-o-transition: all .3s ease;
+					transition: all .3s ease;
+
+					&:hover{
+						opacity: 1;
+					}
+
+					p{
+						color: @blanco;
+						
+						position: absolute; //Cuando se pone el cursor encima aparece el elemento.
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+						font-size: 1.5625rem;
+					}
+				}
+			}
+		}
+	}
+
+	.menu{
+		padding: 5.625rem 0; //Espacio de relleno entre el contenido y el borde.	
+
+		.container{
+			.titulo-seccion{
+				h2{
+					text-align: center;
+				}
+			}
+			
+			.contenedor-menu{
+				margin-top: 2.5rem; //Margen parte superior.
+				text-align: center;
+
+				.encabezado{
+					font-weight: 600; //Grosor de la letra.
+					letter-spacing: 0.1em;
+					text-transform: uppercase;
+					list-style: none; //quitar los punticos de de las listas.
+					display: flex; //Para que se coloque un elemento al lado del otro.
+					justify-content: center; //Centrar el contenido del display:flex.
+
+					li{
+						a{
+							font-size: 1rem; //Tamaño de letra.
+							padding: 0 3.4375rem 1.125rem 1.4375rem;
+							display: block; //Mostrar como bloque para poder colocar el padding porque normalmente es elemento de line li.
+							cursor: pointer;
+							-webkit-transition: all .3s ease; //transicion del cursor.
+							-o-transition: all .3s ease; //transicion del cursor.
+							transition: all .3s ease;//transicion del cursor.
+							border-bottom: 2px solid transparent; //Borde inferior.
+
+							&:hover{
+								color:@dorado; //Al hacer Hover(Poner el cursor encima) poner la letra de otro color.
+							}
+						}
+
+						&.active{
+							a{
+								color: @dorado;
+								border-bottom: 2px solid @azul-medio-oscuro;
+							}
+						}
+					}
+				}
+                   //_ contenido menu.
+				.contenido{
+					margin: 0 auto; //Para centrar el contenido.
+					background-color: rgb(222, 233, 247);
+					max-width: auto; //Ancho maximo.
+					margin-top: 1.5rem;
+					border: 6px double @azul-medio-oscuro; //Borde.
+					padding: 0.5 1.25rem;
+					text-align: center;
+					
+
+					>div{ //> significa la subclases directas de esas clases.
+						display: none; //Que no aparezca en la pantalla.
+						-webkit-transition: all .3s ease;
+						-o-transition: all .3s ease;
+						transition: all .3s ease;
+					}
+
+					.active{
+						display: block;
+
+						.item{ 
+							display: flex;
+							justify-content:space-between; //Para que el contenido se coloque pegado al borde izquierdo y derecho.
+							flex-wrap:wrap; //Cuando no quepa horizontal el contenido, este se alinie verticalmente.
+							align-items:center; //Para que se aline el contenido verticalmente.
+							padding: 2.25rem 0;
+							border-bottom: 1px solid @gris-claro;
+							text-align: center;
+						}
+
+						ul, ol {
+							list-style: none;
+						}
+
+						.col.izq{
+							letter-spacing: 0.1em;
+							text-transform: uppercase; //Texto en mayuscula.
+							display: flex;
+							justify-content: center;
+							margin: 1rem;
+							text-align: center;
+							cursor: pointer;
+							-webkit-transition: all .3s ease;
+							-o-transition: all .3s ease;
+							transition: all .3s ease;
+							width: auto;
+							font-weight: 600;
+						}
+
+						.productos{
+							padding: 0 1.4375rem 1.125rem 1.4375rem;
+
+							#i{
+								padding: 0.15rem 0.5rem;
+							}
+						}
+
+						.sub{
+							font-weight: 450;
+							padding: 0.3rem 0rem;
+							text-transform: none;
+
+							>ul{
+								font-weight: 100;
+							}
+						}
+
+						.col.izq li a {
+							//padding: 1.5rem 1.5rem;
+							text-decoration: none;
+							display: flex;
+
+						}
+
+						.col.izq > li{
+							float: left;
+						}
+
+						.col.izq li ul {
+							display: none;
+							position: relative;
+						}
+
+						.col.izq li:hover > ul{ //Cuando ponga el cursor se despliegue el menu.
+							display: block;
+						}
+
+						.col.izq li ul li{
+							position: relative;
+						}
+
+						.col.izq li ul li ul {
+							right: -80px;
+							top: 0;
+						}
+
+
+					}
+
+				}
+			}
+		}
+	}
+}
+
+footer{
+	.nosotros{
+		background-color: @azul-medio-oscuro;
+		color: @blanco;
+		display: flex;
+	
+		.container{
+			display: flex; //Para que las columnas se coloquen al lado de las otras.
+			//justify-content:space-between; //Para que el contenido se coloque pegado al borde izquierdo y derecho.
+			align-items:center;
+
+			.col.izq{
+				border-right: 2px solid @blanco;
+				display: flex;
+				//justify-content:left;
+				white-space: 50%;
+				padding-right: 8rem;
+			
+				
+				.contacto{
+					//border: 2px solid @blanco;
+					position: relative;
+					max-width: 40.625rem;
+					padding: 2.25rem;
+					margin-left: -16rem;
+					width: 25rem;
+					justify-content: center;
+					
+		
+					.formulario_contacto{
+						.input-group{
+							position: relative;
+							margin-bottom: 2rem;
+
+							input[type="text"],
+							input[type="email"],
+							textarea{
+								font-family: @fuente-secundaria;
+								font-size: 1rem;
+								color: @blanco;
+								width: 100%;
+								outline: none; //quita una linea que le añade google por defecto.
+								padding: 0.9375rem 0;
+								background: none;
+								border: none;
+								border-bottom: 2px solid fade(@dorado, 50%);
+								vertical-align: top; //quita un espacio que tiene por defecto.
+
+								&:focus{
+									border-bottom: 2px solid @dorado;
+								}
+							}
+
+							textarea{
+								max-width: 100%;
+								max-height: 10.25rem;
+								min-height: 4.125rem;
+								min-width: 100%;
+							}
+
+							label{
+								color: @blanco;
+								font-family: @fuente-secundaria;
+
+								&.label{
+									position: absolute;
+									top: 1rem;
+									left: 0;
+									font-size: 1rem;
+									line-height: 1rem;
+									margin-left: 1rem;
+									-webkit-transition: all .3s ease;
+									-o-transition: all .3s ease;
+									transition: all .3s ease;
+
+									&.active{
+										top: -0.75rem;
+										margin-left: 0;
+										font-size: 0.75rem;
+										line-height: 0.75rem;
+										color: @texto-claro;
+									}
+								}
+							}
+
+							.error{
+								position: absolute;
+								color: rgb(255,59,59);
+								font-family: @fuente-secundaria;
+								font-size: 0.875rem;
+							}
+						}
+
+						input[type="submit"]{
+							font-family: @fuente-secundaria;
+							background: @dorado;
+							color: @blanco;
+							border-radius: 1px;
+							border: 2px solid @blanco;
+							cursor: pointer;
+							display: block;
+							margin: 0 auto;
+							margin-top: 3.125rem;
+							padding: 0.9375rem;
+							width: 20%;
+							outline: none;
+							-webkit-transition: all .3s ease;
+							-o-transition: all .3s ease;
+							transition: all .3s ease;
+
+							&:hover{
+								background: darken(@dorado, 10%); //Darker es una funcion de less que oscurese el color que le digamos.
+							}
+						}
+					}
+				}
+			}
+	
+			.col.der{
+				white-space: 50%;
+				padding-left: 5%;
+				margin-left: 3rem;
+	
+				.sub_titulo{
+					border-bottom: 1px solid @gris-claro;
+				}
+
+				.texto{
+					p{
+						font-size: 1.125rem;
+						line-height: 1.75;
+						color: @blanco;
+						padding: 1rem 0;
+					}
+				}
+			}
+		}
+	}
+
+	.footer_end{
+		
+		background: @negro-custom;
+		padding: 5.625rem 0;
+		text-align: center;
+		color: @blanco;
+
+		.bottom-redes{
+			margin-top: 2.25rem;
+		}
+
+		a{
+			padding: 0 0.5625rem;
+			color: @blanco;
+			-webkit-transition: all 0.3s ease;
+			-o-transition: all 0.3s ease;
+			transition: all 0.3s ease;
+
+			&:hover{
+				color: @dorado;
+			}
+		}
+	}
+}
+
+@media all and (max-width: 1500px){
+	.main{
+		.portada{
+			.col{
+				.texto{
+					padding-left: 2.25rem;
+					padding-right: 2.25rem;
+				}
+			}
+		}
+	}
+}
+
+@media all and (max-width: 1199px){
+	.main .portada .col .foto{
+		display: none;
+	}
+	.main .portada .col .texto{
+		width: 100%;
+	}
+}
+
+@media all and (max-width: 980px){
+	.main .nosotros .container .col.izq{
+		width: 100%;
+		border-right: none;
+		border-bottom: 1px solid @gris-claro;
+		text-align: center;
+		display: block;
+		padding: 0;
+		margin-bottom: 2.25rem;
+	}
+
+	.main .nosotros .container .col.der{
+		width: 100%;
+		padding-left: 0;
+		text-align: justify;
+	}
+
+	.main .contacto .datos .container .blurb{
+		width: 100%;
+		max-width: 40.625rem;
+		margin: 0 auto;
+		margin-bottom: 2.25rem;
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+}
+
+@media all and (max-width: 800px){
+	.main .portada .col{
+		width: 100%;
+
+		.foto-full.izq{
+			display: none;
+		}
+
+		.texto{
+			h2{
+				text-align: center;
+			}
+
+			p{
+				text-align: justify;
+			}
+		}
+	}
+
+	.main .chef .container .col{
+		width: 100%;
+	}
+
+	.main .chef .container .col .titulo-seccion{
+		padding-left: 0;
+		padding-bottom: 0;
+		text-align: center;
+	}
+}
+
+@media all and (max-width: 580px){
+	.titulo-seccion{
+		h2{
+			font-size: 2rem;
+		}
+	}
+
+	.nosotros .container .col.der .texto p{
+		font-size: 1rem;
+	}
+
+	.main .menu .container .contenedor-menu .contenido .item .col.izq{
+		width: 100%;
+		text-align: center;
+		margin-bottom: 0.625rem;
+	}
+
+	.main .menu .container .contenedor-menu .contenido .item .col.der{
+		width: 100%;
+	}
+
+	.contacto .formulario .formulario_contacto input[type=submit]{
+		width: 100%;
+	}
+}
